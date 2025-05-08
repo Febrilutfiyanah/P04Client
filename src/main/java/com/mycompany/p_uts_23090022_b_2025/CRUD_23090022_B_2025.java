@@ -38,7 +38,7 @@ public class CRUD_23090022_B_2025 {
                 System.out.println(p.toJson());
             }
             //Seacrh
-            Document foundProduct = collection.find(Filters.eq("name", "Kulkas")).first();
+            Document foundProduct = collection.find(Filters.eq("name", "Leptop")).first();
             
             if (foundProduct != null) {
                 System.out.println("Produk ditemukan:");
@@ -47,10 +47,10 @@ public class CRUD_23090022_B_2025 {
                 System.out.println("Produk tidak ditemukan.");
             }
             // Update harga printer jadi 1750000
-            collection.updateOne(Filters.eq("nama", "Printer"), new Document("$set", new Document("harga", 1750000)));
+            collection.updateOne(Filters.eq("name", "Printer"), new Document("$set", new Document("Harga", 1750000)));
             System.out.println("=== Data Printer berhasil diperbarui ===");
              // Hapus data Leptop
-            collection.deleteOne(Filters.eq("nama", "Leptop"));
+            collection.deleteOne(Filters.eq("name", "Leptop"));
             System.out.println("=== Data Leptop berhasil dihapus ===");
         }catch (Exception e){
             
